@@ -12,8 +12,8 @@ export const Login = () => {
     let [eye, setEye]=useState("");
     let [visible, setVisible]=useState(false);
     let [loginSignup, setLoginSignup]=useState("Log in");
-    // let [inpName,setInpName]=useState("")   //use to empty input field after data send
-    // let [inpemail,setInpemail]=useState("")
+    let [inpName,setInpName]=useState("")   //use to empty input field after data send
+    let [inpemail,setInpemail]=useState("")
 
 
 function handle(e){
@@ -52,7 +52,7 @@ function handleVisible(){
                 <div className="login">
                     <label htmlFor='naam'>Name</label>
                     <div className='inp-icon'>
-                    <input type="text" id='naam'    name='from_name' placeholder='Enter Name' required />
+                    <input type="text" id='naam' onChange={(e)=>{setInpName(e.target.value)}} value={inpName}    name='from_name' placeholder='Enter Name' required autoComplete='off'/>
                     <FaUser />
                     </div>
                 </div>
@@ -61,7 +61,7 @@ function handleVisible(){
                 <div className="login">
                     <label htmlFor='mail'>Email</label>
                     <div className='inp-icon'>
-                    <input type="email" id='mail' name='from_email'  placeholder='Enter Email' required />
+                    <input type="email" id='mail' name='from_email' onChange={(e)=>{setInpemail(e.target.value)}} value={inpemail} placeholder='Enter Email' required />
                     <IoIosMail />
                     </div>
                 </div>
@@ -85,8 +85,8 @@ function handleVisible(){
                 }
     
                     <div className="submit-btn">
-                    <button  className={loginSignup==="Sign up"?"gray-color":"submit"} onClick={()=>{setLoginSignup("Log in") }}>Log in</button>
-                    <button className={loginSignup==="Log in"?"gray-color":"submit"} onClick={()=>{setLoginSignup("Sign up")}}>Sign up</button>
+                    <button  className={loginSignup==="Sign up"?"gray-color":"submit"} onClick={()=>{setLoginSignup("Log in"), setInpemail(""),setEye("")}}>Log in</button>
+                    <button className={loginSignup==="Log in"?"gray-color":"submit"} onClick={()=>{setLoginSignup("Sign up"), setInpName(""),setInpemail(""),setEye("")}}>Sign up</button>
                     </div>
     
                 </form>

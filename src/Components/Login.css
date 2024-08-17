@@ -35,6 +35,11 @@ body {
         width: 250px;
     }
 }
+@media all and (max-width:290px){
+    .login-form{
+        width: 180px;
+    }
+}
 
 .heading {
     margin: 0;
@@ -51,7 +56,9 @@ body {
     outline: none;
     width: 100%;
     background-color: transparent;
+    
 }
+
 
 .inp-icon {
     border: 2px solid gray;
@@ -67,12 +74,22 @@ body {
         width:180px;
     }
 }
+@media all and (max-width:290px) {
+    .inp-icon{
+        width:150px;
+    }
+}
 @media all and (max-width:380px) {
     .para{
         /* width:120px; */
         font-size: 10px;
     }
 }
+/* @media all and (max-width:290px) {
+    .para{
+        font-size: 8px;
+    }
+} */
 /* .login textarea{
     border: 2px solid gray;
     border-radius: 5px;
@@ -101,6 +118,11 @@ body {
 @media all and (max-width:380px) {
     .submit-btn{
         width: 15rem;
+    }
+}
+@media all and (max-width:290px) {
+    .submit-btn{
+        width: 11rem;
     }
 }
 
